@@ -1,20 +1,22 @@
 <template>
     <nav>
-        <li>
-            <router-link to="/home">Home</router-link>
-        </li>
-        <li>
-            <router-link to="/pages">Pages</router-link>
-        </li>
-        <li>
-            <router-link to="/services">Services</router-link>
-        </li>
-        <li>
-            <router-link to="/work">Work</router-link>
-        </li>
-        <li>
-            <router-link to="/contact">Contact</router-link>
-        </li>
+        <ul>
+            <li>
+                <router-link to="/home">Home</router-link>
+            </li>
+            <li>
+                <router-link to="/pages">Pages</router-link>
+            </li>
+            <li>
+                <router-link to="/service">Services</router-link>
+            </li>
+            <li>
+                <router-link to="/work">Work</router-link>
+            </li>
+            <li>
+                <router-link to="/contact">Contact</router-link>
+            </li>
+        </ul>
     </nav>
 </template>
 
@@ -25,10 +27,17 @@ export default {
 </script>
 
 <style scoped>
-nav {
-    background-color: var(--primary-color_3);
-    opacity: 0.91;
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
+
+li {
+    display: flex;
+    align-items: center;
+}
+
 li::before {
     content: "";
     display: inline-block;

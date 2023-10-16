@@ -1,25 +1,28 @@
 <template>
-  <NavigationComponent />
-  
-  <div>
-    <router-view></router-view>
-  </div>
+  <TopInfo />
+  <HeaderVue />
+  <router-view />
+  <FooterVue />
 </template>
 
 <script>
-import NavigationComponent from './components/NavigationComponent.vue';
+import HeaderVue from '@/components/HeaderVue.vue';
+import TopInfo from './components/TopInfo.vue';
+import FooterVue from './components/FooterVue.vue';
 
 export default {
   name: 'App',
   components: {
-    NavigationComponent,
+    HeaderVue,
+    TopInfo,
+    FooterVue,
   }
 }
 </script>
 
 <style>
-@import "./font/cabin/stylesheet.css";
-@import "./font/lato/stylesheet.css";
+@import "@/font/cabin/stylesheet.css";
+@import "@/font/lato/stylesheet.css";
 
 * {
   padding: 0;
@@ -42,8 +45,8 @@ li {
   --primary-color_1: #ffcc4a;
   --primary-color_2: #4eaf4e;
   --primary-color_3: #181818;
-  --secondary-color_1: #f5f5f5;
-  --secondary-color_2: #ffffff;
+  --secondary-color_1: #ffffff;
+  --secondary-color_2: #f5f5f5;
   --secondary-color_3: #595566;
 
   --font_1: "Cabin";
@@ -87,10 +90,16 @@ h6 {
 }
 
 p {
-    color: var(--secondary-color_3);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 145.5%;
+  color: var(--secondary-color_3);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 145.5%;
+}
+
+.wrapper {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
 button {
@@ -103,6 +112,8 @@ button {
   background-color: var(--primary-color_3);
   border: 2px solid var(--primary-color_3);
   transition: background-color .4s, color .2s;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 button:hover {
@@ -122,5 +133,9 @@ button:hover {
   background-color: var(--primary-color_3);
 }
 
-#app {}
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 </style>
